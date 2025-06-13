@@ -8,7 +8,7 @@ from anasayfa import show_home
 import streamlit as st
 
 # Sayfa ayarları
-st.set_page_config(page_title="Apandisit Teşhis Sistemi",
+st.set_page_config(page_title="Apandisit Tanısında Yapay Zeka Destekli Karar Sistemi",
                    page_icon="📈", layout="centered")
 
 # Oturum durumunda page değişkenini başlat

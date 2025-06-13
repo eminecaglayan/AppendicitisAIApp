@@ -7,7 +7,7 @@ import pandas as pd
 
 
 def show_data_info():
-    st.header("📊 Veri Bilgisi")
+    st.header("Veri Bilgisi")
     st.markdown("Kullanılan veri seti hakkında bilgiler:")
     try:
         df = pd.read_excel("outputs/filtered_for_final_m_filled.xlsx")

@@ -6,7 +6,7 @@ import streamlit as st
 
 
 def show_home():
-    st.title("📈 Apandisit Teşhis Yardımcısı")
+    st.title("Apandisit Tanısında Yapay Zeka Destekli Karar Sistemi")
     st.markdown(
         "Bu uygulama apandisit teşhisine yardımcı olmak amacıyla geliştirilmiştir.")
 

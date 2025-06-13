@@ -6,7 +6,7 @@ import streamlit as st
 
 
 def show_developers():
-    st.header("👥 Geliştiriciler")
+    st.header("Geliştiriciler")
     st.markdown(
         """
 **Proje Danışmanı:** Ümitcan YILDIZ (umitcanyldz21@gmail.com)  

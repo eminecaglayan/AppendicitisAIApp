@@ -45,7 +45,7 @@ def sanitize_features(features_dict):
 
 
 def show_diagnosis():
-    st.header("🔮 Teşhis")
+    st.header("Teşhis")
     st.markdown("Lütfen hasta bilgilerini ve ultrason görüntüsünü giriniz:")
 
     # Görsel yükleme
@@ -76,7 +76,7 @@ def show_diagnosis():
         st.stop()
 
     # Hasta özellikleri girişi
-    st.subheader("🧾 Hasta Özellikleri")
+    st.subheader("Hasta Özellikleri")
     features = {}
 
     # Kategorik değişkenler
@@ -125,7 +125,7 @@ def show_diagnosis():
                 res.raise_for_status()
                 result = res.json()
 
-                st.success("✅ Tahmin Başarılı!")
+                st.success("Tahmin Başarılı!")
                 st.markdown(
                     f"**Apandisit Çapı:** `{result['Appendix_Diameter']} mm`")
                 kategori = ">6mm" if result['Appendix_Diameter_Categorized'] == 'yes' else "≤6mm"
