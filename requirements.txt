@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+pandas
+numpy
+scikit-learn
+xgboost
+joblib
+torchvision
+torch
+matplotlib
+openpyxl
+segmentation-models-pytorch
+Pillow
+streamlit
+opencv-python-headless
+prince
