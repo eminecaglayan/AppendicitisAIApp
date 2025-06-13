@@ -1,4 +1,13 @@
 services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: appendicitis
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
   api:
     build:
       context: .
@@ -9,9 +18,11 @@ services:
     volumes:
       - .:/app
       - ./uploads:/app/uploads
-
+    depends_on:
+      - db
     environment:
-      - PYTHONPATH=/app
+      - PYTHONPATH=/app/scripts
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/appendicitis
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/docs"]
       interval: 5s
@@ -21,7 +32,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: streamlit run scripts/streamlit_app/frontend.py --server.port=8501
+    command: streamlit run scripts/streamlit_app/app.py --server.port=8501 --server.address=0.0.0.0 --server.headless true
     ports:
       - "8501:8501"
     volumes:
@@ -31,4 +42,8 @@ services:
     depends_on:
       - api
     environment:
-      - API_URL=http://api:8000/predict
+      - API_URL=http://api:8000
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/appendicitis
+
+volumes:
+  postgres_data:

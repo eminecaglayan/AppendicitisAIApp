@@ -1,6 +1,7 @@
 import joblib
 import pandas as pd
 
+
 class MCATransformer:
     def __init__(self, excel_path: str, mca_path: str):
         # 🔹 Excel verisi ve MCA modeli yüklenir
@@ -42,7 +43,8 @@ class MCATransformer:
         mca_input = row[self.categorical_cols]
         mca_array = self.mca.transform(mca_input)
         mca_col_names = [str(i) for i in range(mca_array.shape[1])]
-        mca_df = pd.DataFrame(mca_array, columns=mca_col_names, index=row.index)
+        mca_df = pd.DataFrame(
+            mca_array, columns=mca_col_names, index=row.index)
 
         # 🔹 Sayısal verilerle birleştir
         numeric_df = row[self.numerical_cols].reset_index(drop=True)
