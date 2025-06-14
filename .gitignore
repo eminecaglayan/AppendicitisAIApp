@@ -54,7 +54,8 @@ uploads/*.jpeg
 !uploads/.gitkeep
 
 # Alembic versions (will be regenerated)
-alembic/versions/*.py
+# alembic/versions/*.py
+alembic/versions/*.pyc
 !alembic/versions/.gitkeep
 
 # Environment variables
