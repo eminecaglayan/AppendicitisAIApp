@@ -35,6 +35,11 @@ env/
 
 # OS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
 # IDE
@@ -42,6 +47,7 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+*~
 
 # Docker
 .dockerignore
@@ -54,18 +60,23 @@ uploads/*.jpeg
 !uploads/.gitkeep
 
 # Alembic versions (will be regenerated)
-# alembic/versions/*.py
 alembic/versions/*.pyc
 !alembic/versions/.gitkeep
 
 # Environment variables
 .env
+.env.*
 
-# Git
-.git/
-
-# Large model files (if any)
+# Large model files (block all by default)
 *.pkl
 *.pt
 *.pth
-outputs/model_w/
+
+# Allow only our required model files
+!outputs/model_w/ML/mca_transformer.pkl
+!outputs/model_w/ML/xgb_mca_model_no_us_d_filled.pkl
+!outputs/model_w/U-Net/best_unet_resnet34_b2.pt
+
+# Temporary files
+*.tmp
+*.temp
