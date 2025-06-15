@@ -67,15 +67,11 @@ alembic/versions/*.pyc
 .env
 .env.*
 
-# Large model files (block all by default)
+# Model files (excluded from repository)
 *.pkl
 *.pt
 *.pth
-
-# Allow only our required model files
-!outputs/model_w/ML/mca_transformer.pkl
-!outputs/model_w/ML/xgb_mca_model_no_us_d_filled.pkl
-!outputs/model_w/U-Net/best_unet_resnet34_b2.pt
+outputs/model_w/
 
 # Temporary files
 *.tmp
